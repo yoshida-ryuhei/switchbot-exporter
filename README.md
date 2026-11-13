@@ -2,6 +2,12 @@
 
 Exports [switchbot](https://us.switch-bot.com) device metrics for [prometheus](https://prometheus.io).
 
+The release workflow builds `linux/amd64` and `linux/arm64` container images with `Dockerfile.distroless` for version tags and publishes them to `ghcr.io/yoshida-ryuhei/switchbot-exporter` after the repository variable `CONTAINER_LICENSE_REVIEWED` is set to `true`. The existing `Dockerfile` remains available for the upstream build. Once published, pull a version with:
+
+```sh
+docker pull ghcr.io/yoshida-ryuhei/switchbot-exporter:v0.5.2
+```
+
 ## Supported Devices / Metrics
 
 Currently supports humidity and temperature for:
